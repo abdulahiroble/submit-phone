@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import { Computer } from "../stories/Computer"
+import { Package } from "../stories/Package"
+import { Payment } from "../stories/Payment"
+import { CheckMark } from "../stories/CheckMark"
 
 export default function Home() {
   return (
@@ -10,40 +14,32 @@ export default function Home() {
 
       <div>
 
-        <div>
-          <div>Sådan sælger du din telefon til phoneSwap</div>
-          <div></div>
+
+        <div class="flex w-1/2 mx-auto">
+          <div class="flex-2">Sådan sælger du din telefon til phoneSwap</div>
+          <div class="flex-1">
+            <div><Computer />Få et prisoverslag på din telefon</div>
+          </div>
+          <div class="flex-1">
+            <div><Package />Send din telefon til Swappie
+            </div>
+          </div>
+          <div class="flex-1">
+            <div><Payment />
+              Bankoverførsel foretages til din konto efter vores gennemtjek</div>
+          </div>
         </div>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div class="grid grid-cols-2 gap-4 mt-10 w-1/2 mx-auto">
+          <div><CheckMark /></div>
+          <div><CheckMark /></div>
+          <div><CheckMark /></div>
+          <div><CheckMark /></div>
+          <div><CheckMark /></div>
+          <div><CheckMark /></div>
         </div>
+
+
       </div>
     </>
   )
