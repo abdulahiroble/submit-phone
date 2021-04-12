@@ -31,12 +31,13 @@ export default function Home() {
         </div>
 
         <div class="grid grid-cols-2 gap-4 mt-10 w-1/2 mx-auto">
-          <div><CheckMark /></div>
-          <div><CheckMark /></div>
-          <div><CheckMark /></div>
-          <div><CheckMark /></div>
-          <div><CheckMark /></div>
-          <div><CheckMark /></div>
+          <div><CheckMark />Fri fragt med DHL Express</div>
+          <div><CheckMark />Vores bud er gyldigt i 2 uger</div>
+          <div><CheckMark />Hurtig betaling til din bankkonto</div>
+          <div><CheckMark />De bedste priser</div>
+          <div><CheckMark />
+            Pålidelig service</div>
+          <div><CheckMark />Fremragende kundeservice</div>
         </div>
 
 
