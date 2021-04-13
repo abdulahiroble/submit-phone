@@ -3,6 +3,7 @@ import { Computer } from "../stories/Computer"
 import { Package } from "../stories/Package"
 import { Payment } from "../stories/Payment"
 import { CheckMark } from "../stories/CheckMark"
+import { Button } from "../stories/Button";
 import Image from 'next/image'
 
 export default function Home() {
@@ -38,22 +39,11 @@ export default function Home() {
           <div><CheckMark />Fremragende kundeservice</div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-10">
-          <div><CheckMark />Fri fragt med DHL Express</div>
-          <div><CheckMark />Vores bud er gyldigt i 2 uger</div>
-          <div><CheckMark />Hurtig betaling til din bankkonto</div>
-          <div><CheckMark />De bedste priser</div>
-          <div><CheckMark />
-            Pålidelig service</div>
-          <div><CheckMark />Fremragende kundeservice</div>
-        </div>
-
-
-        <div className="grid grid-cols-1 mt-10 sm:grid-cols-4 lg:sm:grid-cols-6">
-          <div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/> </div>
-          <div><Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/></div>
-          <div><Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/></div>
-          <div><Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/></div>
+        <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-4 lg:sm:grid-cols-6">
+          <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
         </div>
       </div>
     </>
