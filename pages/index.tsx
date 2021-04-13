@@ -16,34 +16,34 @@ export default function Home() {
 
       <div className="w-1/2 mx-auto">
         <div className="flex flex-col sm:flex-row">
-          <div className="flex-1">
-            <div><Computer />Få et prisoverslag på din telefon</div>
+          <div className="flex-1 p-5">
+            <div className="text-center"><Computer />Få et prisoverslag på din telefon</div>
           </div>
-          <div className="flex-1">
-            <div><Package />Send din telefon til Swappie
+          <div className="flex-1 p-5">
+            <div className="text-center"><Package />Send din telefon til Swappie
             </div>
           </div>
-          <div className="flex-1">
-            <div><Payment />
+          <div className="flex-1 p-5">
+            <div className="text-center"><Payment />
               Bankoverførsel foretages til din konto efter vores gennemtjek</div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-10">
-          <div><CheckMark />Fri fragt med DHL Express</div>
-          <div><CheckMark />Vores bud er gyldigt i 2 uger</div>
-          <div><CheckMark />Hurtig betaling til din bankkonto</div>
-          <div><CheckMark />De bedste priser</div>
-          <div><CheckMark />
-            Pålidelig service</div>
-          <div><CheckMark />Fremragende kundeservice</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+          <div className="flex"><CheckMark /><div className="pl-3">Fri fragt med DHL Express</div></div>
+          <div className="flex"><CheckMark /><div className="pl-3">Vores bud er gyldigt i 2 uger</div></div>
+          <div className="flex"><CheckMark /><div className="pl-3">Hurtig betaling til din bankkonto</div></div>
+          <div className="flex"><CheckMark /><div className="pl-3">De bedste priser</div></div>
+          <div className="flex"><CheckMark />
+            <div className="pl-3">Pålidelig service</div></div>
+          <div className="flex"><CheckMark /><div className="pl-3">Fremragende kundeservice</div></div>
         </div>
 
-        <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-4 lg:sm:grid-cols-6">
-          <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
-             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
-             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
-             <div><div >iPhone 12 Pro Max</div><br/><div >Prisoverslag: Op til 8060 kr</div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+        <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-6 lg:grid-cols-4 md:grid-cols-2">
+          <div className="p-3"><div className="text-lg font-bold">iPhone 12 Pro Max</div><br/><div >Prisoverslag: <span className="font-bold">Op til 8060 kr</span></div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div className="p-3"><div className="text-lg font-bold">iPhone 12 Pro Max</div><br/><div >Prisoverslag: <span className="font-bold">Op til 8060 kr</span></div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div className="p-3"><div className="text-lg font-bold">iPhone 12 Pro Max</div><br/><div >Prisoverslag: <span className="font-bold">Op til 8060 kr</span></div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
+             <div className="p-3"><div className="text-lg font-bold">iPhone 12 Pro Max</div><br/><div >Prisoverslag: <span className="font-bold">Op til 8060 kr</span></div> <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500}/><Button variant="orange">VÆLG</Button> </div>
         </div>
       </div>
     </>
