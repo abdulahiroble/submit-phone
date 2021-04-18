@@ -11,10 +11,10 @@ import Image from 'next/image'
 export default function Home() {
 
   const phones = [
-    { iphone: "iPhone 12 Pro Max", price: 8060, storage: 256, image: <Image src={"/iPhone_12_pro_max_graphite.png"} width={500} height={500} /> },
-    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: <Image src={"/iPhone_12_pro_silver.png"} width={500} height={500} /> },
-    { iphone: "iPhone 12", price: 5220, storage: 512, image: <Image src={"/iPhone_12_white.png"} width={500} height={500} /> },
-    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500} /> }
+    { iphone: "iPhone 12 Pro Max", price: 8060, storage: [{ capacity: [128, 256, 512] }], image: "/iPhone_12_pro_max_graphite.png" },
+    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: "/iPhone_12_pro_silver.png" },
+    { iphone: "iPhone 12", price: 5220, storage: 512, image: "/iPhone_12_white.png" },
+    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: "/iPhone_12_mini_Blue.png" }
   ]
 
   return (
@@ -60,13 +60,15 @@ export default function Home() {
                   </div>
                   <br />
                   <div >Prisoverslag: <span className="font-bold">Op til {phone.price} kr</span></div>
-                  <div>{phone.image}</div>
+                  <div><Image src={phone.image} width={500} height={500} /></div>
                   <Button variant="orange">
                     <Link href={{
                       pathname: "step1",
                       query: {
                         phone: phone.iphone,
-                        price: phone.price
+                        price: phone.price,
+                        storage: phone.storage.toString(),
+                        image: phone.image.toString()
                       },
                     }}>VÆLG</Link>
                   </Button>

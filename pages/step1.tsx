@@ -1,7 +1,8 @@
 import React from 'react'
 import { useRouter } from "next/router";
+import Image from 'next/image'
 
-const step1 = (props) => {
+const step1 = () => {
 
     // const handleNameChange = (event) => {
     //     updatFormdata({name: event.target.value})
@@ -15,9 +16,11 @@ const step1 = (props) => {
 
     return (
         <div>
-            {router.query.phone}
-            {/* <p>Name: <input type="text" name="name" onChange={handleNameChange}/></p>
-            <p>Surname: <input type="text" name="surname" onChange={handleSurnameChange}/></p> */}
+            <div>Vælg hukommelse</div>
+            {router.query.storage}
+
+            <Image src={`${router.query.image}`} width={500} height={500} />
+
         </div>
     )
 }
