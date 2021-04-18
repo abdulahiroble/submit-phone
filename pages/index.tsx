@@ -11,10 +11,10 @@ import Image from 'next/image'
 export default function Home() {
 
   const phones = [
-    { iphone: "iPhone 12 Pro Max", price: 8060, storage: 256 },
-    { iphone: "iPhone 12 Pro", price: 7790, storage: 128 },
-    { iphone: "iPhone 12", price: 5220, storage: 512 },
-    { iphone: "iPhone 12 Mini", price: 4640, storage: 100 }
+    { iphone: "iPhone 12 Pro Max", price: 8060, storage: 256, image: <Image src={"/iPhone_12_pro_max_graphite.png"} width={500} height={500} /> },
+    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: <Image src={"/iPhone_12_pro_silver.png"} width={500} height={500} /> },
+    { iphone: "iPhone 12", price: 5220, storage: 512, image: <Image src={"/iPhone_12_white.png"} width={500} height={500} /> },
+    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: <Image src={"/iPhone_12_mini_Blue.png"} width={500} height={500} /> }
   ]
 
   return (
@@ -41,7 +41,7 @@ export default function Home() {
 
 
 
-        <div className="grid grid-rows-3 grid-flow-row  sm:grid-flow-col gap-4 mt-10">
+        <div className="grid grid-rows-2 grid-flow-row  sm:grid-flow-col gap-4 mt-10">
           <div className="flex"><CheckMark /><div className="pl-3">Fri fragt med DHL Express</div></div>
           <div className="flex"><CheckMark /><div className="pl-3">Vores bud er gyldigt i 2 uger</div></div>
           <div className="flex"><CheckMark /><div className="pl-3">Hurtig betaling til din bankkonto</div></div>
@@ -50,12 +50,70 @@ export default function Home() {
           <div className="flex"><CheckMark /><div className="pl-3">Fremragende kundeservice</div></div>
         </div>
 
+        <div className="grid grid-rows-2 sm:grid-flow-col gap-4 mt-10">
+          <div className="flex text-center flex-col sm:flex-row">
+            {phones.map((test) => {
+              return <div>
+                <div>
+                  <div className="text-lg font-bold">
+                    {test.iphone}
+                  </div>
+                  <br />
+                  <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
+                  <div>{test.image}</div>
+                  <Button variant="orange">
+                    <Link href="step1">VÆLG</Link>
+                  </Button>
+                </div>
+              </div>
+            })}</div>
+        </div>
 
-        {phones.map((test) => {
+        {/* {phones.map((test) => {
           return <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-6 lg:grid-cols-4 md:grid-cols-2">
-            <div><div className="text-lg font-bold">{test.iphone}</div><br /><div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div> <Image src={"/iPhone_12_pro_max_graphite.png"} width={500} height={500} /><Button variant="orange"><Link href="step1">VÆLG</Link></Button> </div>
+            <div>
+              <div className="text-lg font-bold">
+                {test.iphone}
+              </div>
+              <br />
+              <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
+              <div>{test.image}</div>
+              <Button variant="orange">
+                <Link href="step1">VÆLG</Link>
+              </Button>
+            </div>
           </div>
-        })}
+        })} */}
+
+        {/* {phones.map((test) => {
+          return <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-6 lg:grid-cols-4 md:grid-cols-2">
+            <div>
+              <div className="text-lg font-bold">
+                {test.iphone}
+              </div>
+              <br />
+              <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
+              {test.image}
+              <Button variant="orange">
+                <Link href="step1">VÆLG</Link>
+              </Button>
+            </div>
+          </div>
+        })} */}
+
+
+
+        {/* {phones.map((test) => {
+          return (
+            <div className="grid grid-col-1 gap-4">
+              <div className="grid">
+                <div className="text-lg">{test.iphone}</div>
+                <div>{test.price}</div>
+                <div>{test.image}</div>
+              </div>
+            </div>
+          )
+        })} */}
 
 
       </div>
