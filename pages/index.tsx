@@ -11,10 +11,10 @@ import Image from 'next/image'
 export default function Home() {
 
   const phones = [
-    { iphone: "iPhone 12 Pro Max", price: 8060, storage: [{ capacity: [128, 256, 512] }], image: "/iPhone_12_pro_max_graphite.png" },
-    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: "/iPhone_12_pro_silver.png" },
-    { iphone: "iPhone 12", price: 5220, storage: 512, image: "/iPhone_12_white.png" },
-    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: "/iPhone_12_mini_Blue.png" }
+    { iphone: "iPhone 12 Pro Max", price: 8060, storage: [{ capacity: [128, 256, 512] }], image: `/iPhone_12_pro_max_graphite.png` },
+    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: `/iPhone_12_pro_silver.png` },
+    { iphone: "iPhone 12", price: 5220, storage: 512, image: `/iPhone_12_white.png` },
+    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: `/iPhone_12_mini_Blue.png` }
   ]
 
   return (
@@ -68,7 +68,7 @@ export default function Home() {
                         phone: phone.iphone,
                         price: phone.price,
                         storage: phone.storage.toString(),
-                        image: phone.image.toString()
+                        image: phone.image
                       },
                     }}>VÆLG</Link>
                   </Button>
