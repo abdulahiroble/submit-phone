@@ -52,68 +52,28 @@ export default function Home() {
 
         <div className="grid grid-rows-2 sm:grid-flow-col gap-4 mt-10">
           <div className="flex text-center flex-col sm:flex-row">
-            {phones.map((test) => {
+            {phones.map((phone) => {
               return <div>
                 <div>
                   <div className="text-lg font-bold">
-                    {test.iphone}
+                    {phone.iphone}
                   </div>
                   <br />
-                  <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
-                  <div>{test.image}</div>
+                  <div >Prisoverslag: <span className="font-bold">Op til {phone.price} kr</span></div>
+                  <div>{phone.image}</div>
                   <Button variant="orange">
-                    <Link href="step1">VÆLG</Link>
+                    <Link href={{
+                      pathname: "step1",
+                      query: {
+                        phone: phone.iphone,
+                        price: phone.price
+                      },
+                    }}>VÆLG</Link>
                   </Button>
                 </div>
               </div>
             })}</div>
         </div>
-
-        {/* {phones.map((test) => {
-          return <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-6 lg:grid-cols-4 md:grid-cols-2">
-            <div>
-              <div className="text-lg font-bold">
-                {test.iphone}
-              </div>
-              <br />
-              <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
-              <div>{test.image}</div>
-              <Button variant="orange">
-                <Link href="step1">VÆLG</Link>
-              </Button>
-            </div>
-          </div>
-        })} */}
-
-        {/* {phones.map((test) => {
-          return <div className="grid grid-cols-1 text-center mt-10 sm:grid-cols-6 lg:grid-cols-4 md:grid-cols-2">
-            <div>
-              <div className="text-lg font-bold">
-                {test.iphone}
-              </div>
-              <br />
-              <div >Prisoverslag: <span className="font-bold">Op til {test.price} kr</span></div>
-              {test.image}
-              <Button variant="orange">
-                <Link href="step1">VÆLG</Link>
-              </Button>
-            </div>
-          </div>
-        })} */}
-
-
-
-        {/* {phones.map((test) => {
-          return (
-            <div className="grid grid-col-1 gap-4">
-              <div className="grid">
-                <div className="text-lg">{test.iphone}</div>
-                <div>{test.price}</div>
-                <div>{test.image}</div>
-              </div>
-            </div>
-          )
-        })} */}
 
 
       </div>
