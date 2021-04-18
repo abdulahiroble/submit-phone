@@ -29,15 +29,15 @@ export const Button = (props: {
         </button>
       );
 
-      case "orange":
-        return (
-          <button
-            className="bg-yellow-500 mb-10 w-20 text-white px-3 py-3 mx-2 my-2 rounded-full"
-            onClick={onClick}
-          >
-            {children}
-          </button>
-        );
+    case "orange":
+      return (
+        <button
+          className="bg-yellow-500 mb-10 w-20 text-white px-3 py-3 rounded-full"
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
 
     case "red":
       return (
