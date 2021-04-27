@@ -9,7 +9,7 @@ const form = () => {
     const router = useRouter();
     return (
         <>
-            <form name="contact" method="POST" data-netlify="true">
+            {/* <form name="contact" method="POST" data-netlify="true">
                 <div className="grid grid-cols-2 p-10">
 
                     <div className=" px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -19,6 +19,8 @@ const form = () => {
                                     First Name
                                 </label>
                                 <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" name="firstname" type="text" />
+
+                                <input type="hidden" name="form-name" value="contact" />
 
                             </div>
                             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -55,13 +57,13 @@ const form = () => {
                                 <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
                                     City
                                 </label>
-                                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" />
+                                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" name="city" />
                             </div>
                             <div className="md:w-1/2 px-3">
                                 <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
-                                    Zip
+                                    Postal
                                 </label>
-                                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" type="text" />
+                                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" name="postal" type="text" />
                             </div>
                         </div>
 
@@ -84,7 +86,47 @@ const form = () => {
                     </div>
 
                 </div>
+            </form> */}
+
+
+            {/* <form name="contact" method="POST" data-netlify="true">
+                <p>
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" name="name" />
+                </p>
+                <input type="hidden" name="form-name" value="name_of_my_form" />
+                <p>
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id="email" name="email" />
+                </p>
+                <p>
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form> */}
+
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="contact" value="contact" />
+                <p>
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" name="name" />
+                </p>
+                <p>
+                    <label htmlFor="email">Email</label>
+                    <input type="text" id="email" name="email" />
+                </p>
+                <p>
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
             </form>
+
         </>
     )
 }
