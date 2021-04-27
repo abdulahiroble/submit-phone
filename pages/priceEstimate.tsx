@@ -23,7 +23,15 @@ const priceEstimate = () => {
             <div className="">
                 <div>Dit prisoverslag</div>
                 <div>3390 kr</div>
-                <Button><Link href="/form">SÆLG TELEFON</Link></Button>
+                <Button><Link href={{
+                    pathname: "form",
+                    query: {
+                        phone: router.query.phone,
+                        price: router.query.price,
+                        storage: router.query.storage,
+                        image: router.query.image
+                    },
+                }}>SÆLG TELEFON</Link></Button>
             </div>
 
 

@@ -15,24 +15,26 @@ const step3 = () => {
             <div className="">
                 <div>Er skærmfarven jævn? (ingen mærker eller pletter)</div>
                 <div className="flex ">
-                    <Button>                    <Link href={{
-                        pathname: "priceEstimate",
-                        query: {
-                            phone: router.query.phone,
-                            price: router.query.price,
-                            storage: router.query.storage,
-                            image: router.query.image
-                        },
-                    }}>JA</Link></Button>
-                    <Button>                    <Link href={{
-                        pathname: "priceEstimate",
-                        query: {
-                            phone: router.query.phone,
-                            price: router.query.price,
-                            storage: router.query.storage,
-                            image: router.query.image
-                        },
-                    }}>NEJ</Link></Button></div>
+                    <Button>
+                        <Link href={{
+                            pathname: "priceEstimate",
+                            query: {
+                                phone: router.query.phone,
+                                price: router.query.price,
+                                storage: router.query.storage,
+                                image: router.query.image
+                            },
+                        }}>JA</Link></Button>
+                    <Button>
+                        <Link href={{
+                            pathname: "priceEstimate",
+                            query: {
+                                phone: router.query.phone,
+                                price: router.query.price,
+                                storage: router.query.storage,
+                                image: router.query.image
+                            },
+                        }}>NEJ</Link></Button></div>
             </div>
 
 
