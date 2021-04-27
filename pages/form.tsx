@@ -108,7 +108,7 @@ const form = () => {
                 </p>
             </form> */}
 
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" action="/">
                 <input type="hidden" name="contact" value="contact" />
                 <p>
                     <label htmlFor="name">Name</label>
