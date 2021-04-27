@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from "next/link"
 import { Button } from "../stories/Button";
 
-const step1 = () => {
+const step2 = () => {
 
     const router = useRouter();
 
@@ -13,19 +13,26 @@ const step1 = () => {
 
 
             <div className="">
-                <div>Vælg hukommelse</div>
-
-                <Button>
-                    <Link href={{
-                        pathname: "step2",
+                <div>Fungerer telefonen normalt?</div>
+                <div className="flex ">
+                    <Button>                    <Link href={{
+                        pathname: "step3",
                         query: {
                             phone: router.query.phone,
                             price: router.query.price,
                             storage: router.query.storage,
                             image: router.query.image
                         },
-                    }}>VÆLG</Link>
-                </Button>
+                    }}>JA</Link></Button>
+                    <Button>                    <Link href={{
+                        pathname: "step3",
+                        query: {
+                            phone: router.query.phone,
+                            price: router.query.price,
+                            storage: router.query.storage,
+                            image: router.query.image
+                        },
+                    }}>NEJ</Link></Button></div>
 
                 {/* <Image alt="banner" src={`${router.query.image}`} width={500} height={500} /> */}
             </div>
@@ -34,11 +41,11 @@ const step1 = () => {
             <div>
                 <img src={`${router.query.image}`} alt="" />
                 <div>Telefonmodel: {router.query.phone}</div>
-                <div>Hukommelse: </div>
+                <div>Hukommelse: {router.query.storage}</div>
             </div>
 
         </div>
     )
 }
 
-export default step1
+export default step2
