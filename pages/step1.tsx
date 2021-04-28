@@ -14,18 +14,19 @@ const step1 = () => {
 
             <div className="">
                 <div>Vælg hukommelse</div>
-
-                <Button>
-                    <Link href={{
-                        pathname: "step2",
-                        query: {
-                            phone: router.query.phone,
-                            price: router.query.price,
-                            storage: router.query.storage,
-                            image: router.query.image
-                        },
-                    }}>VÆLG</Link>
-                </Button>
+                <Link href={{
+                    pathname: "step2",
+                    query: {
+                        phone: router.query.phone,
+                        price: router.query.price,
+                        storage: router.query.storage,
+                        image: router.query.image
+                    },
+                }}>
+                    <Button>
+                        VÆLG
+                    </Button>
+                </Link>
 
                 {/* <Image alt="banner" src={`${router.query.image}`} width={500} height={500} /> */}
             </div>

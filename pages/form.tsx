@@ -88,26 +88,6 @@ const form = () => {
                 </div>
             </form> */}
 
-
-            {/* <form name="contact" method="POST" data-netlify="true">
-                <p>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" />
-                </p>
-                <input type="hidden" name="form-name" value="name_of_my_form" />
-                <p>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" />
-                </p>
-                <p>
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
-            </form> */}
-
             <form name="contact" method="POST" data-netlify="true" action="/">
                 <input type="hidden" name="contact" value="contact" />
                 <p>
@@ -126,7 +106,6 @@ const form = () => {
                     <button type="submit">Send</button>
                 </p>
             </form>
-
         </>
     )
 }

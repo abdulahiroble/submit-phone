@@ -61,17 +61,19 @@ export default function Home() {
                   <br />
                   <div >Prisoverslag: <span className="font-bold">Op til {phone.price} kr</span></div>
                   <div><Image src={phone.image} width={500} height={500} /></div>
-                  <Button variant="orange">
-                    <Link href={{
-                      pathname: "step1",
-                      query: {
-                        phone: phone.iphone,
-                        price: phone.price,
-                        storage: phone.storage.toString(),
-                        image: phone.image
-                      },
-                    }}>VÆLG</Link>
-                  </Button>
+                  <Link href={{
+                    pathname: "step1",
+                    query: {
+                      phone: phone.iphone,
+                      price: phone.price,
+                      storage: phone.storage.toString(),
+                      image: phone.image
+                    },
+                  }}>
+                    <Button variant="orange">
+                      VÆLG
+                    </Button>
+                  </Link>
                 </div>
               </div>
             })}</div>
