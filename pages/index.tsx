@@ -11,10 +11,10 @@ import Image from 'next/image'
 export default function Home() {
 
   const phones = [
-    { iphone: "iPhone 12 Pro Max", price: 8060, storage: [{ capacity: [128, 256, 512] }], image: `/iPhone_12_pro_max_graphite.png` },
-    { iphone: "iPhone 12 Pro", price: 7790, storage: 128, image: `/iPhone_12_pro_silver.png` },
-    { iphone: "iPhone 12", price: 5220, storage: 512, image: `/iPhone_12_white.png` },
-    { iphone: "iPhone 12 Mini", price: 4640, storage: 100, image: `/iPhone_12_mini_Blue.png` }
+    { iphone: "iPhone 12 Pro Max", price: 8060, storage: [{ capacity: ["128GB", "256GB", "512GB"] }], image: `/iPhone_12_pro_max_graphite.png` },
+    { iphone: "iPhone 12 Pro", price: 7790, storage: [{ capacity: ["128GB", "256GB", "512GB"] }], image: `/iPhone_12_pro_silver.png` },
+    { iphone: "iPhone 12", price: 5220, storage: [{ capacity: ["128GB", "256GB", "512GB"] }], image: `/iPhone_12_white.png` },
+    { iphone: "iPhone 12 Mini", price: 4640, storage: [{ capacity: ["128GB", "256GB", "512GB"] }], image: `/iPhone_12_mini_Blue.png` }
   ]
 
   return (
@@ -61,80 +61,28 @@ export default function Home() {
                   <br />
                   <div >Prisoverslag: <span className="font-bold">Op til {phone.price} kr</span></div>
                   <div><Image src={phone.image} width={500} height={500} /></div>
-                  <Button variant="orange">
-                    <Link href={{
-                      pathname: "step1",
-                      query: {
-                        phone: phone.iphone,
-                        price: phone.price,
-                        storage: phone.storage.toString(),
-                        image: phone.image
-                      },
-                    }}>VÆLG</Link>
-                  </Button>
+                  <Link href={{
+                    pathname: "step1",
+                    query: {
+                      phone: phone.iphone,
+                      price: phone.price,
+                      storage: phone.storage.map((test) => test.capacity[0]).toString(),
+                      storage2: phone.storage.map((test) => test.capacity[1]).toString(),
+                      storage3: phone.storage.map((test) => test.capacity[2]).toString(),
+                      image: phone.image
+                    },
+                  }}>
+                    <div className="mt-3">
+                      <Button variant="orange">
+                        VÆLG
+                      </Button>
+                    </div>
+                  </Link>
+                  {/* {phone.storage.map((test) => test.capacity)} */}
                 </div>
               </div>
             })}</div>
         </div>
-
-        {/* <form name="contact" method="POST" data-netlify="true" encType='application/x-www-form-urlencoded'>
-          <p>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" />
-          </p>
-          <input type="hidden" name="form-name" value="name_of_my_form" />
-          <p>
-            <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" />
-          </p>
-          <p>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message"></textarea>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form> */}
-
-        {/* <form name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="contact" value="contact" />
-          <p>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" />
-          </p>
-          <p>
-            <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" />
-          </p>
-          <p>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message"></textarea>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form> */}
-
-        <form name="contact" method="POST" data-netlify="true" action="/">
-          <input type="hidden" name="contact" value="contact" />
-          <p>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" />
-          </p>
-          <p>
-            <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" />
-          </p>
-          <p>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message"></textarea>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
-
-
       </div>
     </>
   )

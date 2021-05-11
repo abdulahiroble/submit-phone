@@ -15,7 +15,7 @@ const step2 = () => {
             <div className="">
                 <div>Fungerer telefonen normalt?</div>
                 <div className="flex ">
-                    <Button>                    <Link href={{
+                    <Link href={{
                         pathname: "step3",
                         query: {
                             phone: router.query.phone,
@@ -23,8 +23,10 @@ const step2 = () => {
                             storage: router.query.storage,
                             image: router.query.image
                         },
-                    }}>JA</Link></Button>
-                    <Button>                    <Link href={{
+                    }}>
+                        <Button>JA</Button>
+                    </Link>
+                    <Link href={{
                         pathname: "step3",
                         query: {
                             phone: router.query.phone,
@@ -32,16 +34,16 @@ const step2 = () => {
                             storage: router.query.storage,
                             image: router.query.image
                         },
-                    }}>NEJ</Link></Button></div>
-
-                {/* <Image alt="banner" src={`${router.query.image}`} width={500} height={500} /> */}
+                    }}>
+                        <Button>NEJ</Button></Link>
+                </div>
             </div>
 
 
             <div>
                 <img src={`${router.query.image}`} alt="" />
                 <div>Telefonmodel: {router.query.phone}</div>
-                <div>Hukommelse: {router.query.storage}</div>
+                <div>Hukommelse: {router.query.storage || router.query.storage2 || router.query.storage3}</div>
             </div>
 
         </div>
