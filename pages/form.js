@@ -43,9 +43,9 @@ const form = () => {
 
             })
         } else {
-            // setStatus({
-            //     info: { error: true, msg: msg },
-            // })
+            setStatus({
+                info: { error: true, msg: msg },
+            })
         }
     }
     const handleOnChange = (e) => {
