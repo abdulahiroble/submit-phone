@@ -18,9 +18,10 @@ const form = () => {
         efternavn: "",
         telefonnummer: "",
         postnummer: "",
-        addresse: "",
+        adresse: "",
         by: "",
-        kontonummer: ""
+        kontonummer: "",
+        message: "",
     })
     const handleServerResponse = (ok, msg) => {
         if (ok) {
@@ -35,15 +36,16 @@ const form = () => {
                 efternavn: "",
                 telefonnummer: "",
                 postnummer: "",
-                addresse: "",
+                adresse: "",
                 by: "",
-                kontonummer: ""
+                kontonummer: "",
+                message: "",
 
             })
         } else {
-            setStatus({
-                info: { error: true, msg: msg },
-            })
+            // setStatus({
+            //     info: { error: true, msg: msg },
+            // })
         }
     }
     const handleOnChange = (e) => {
@@ -69,7 +71,7 @@ const form = () => {
             .then((response) => {
                 handleServerResponse(
                     true,
-                    'Thank you, your message has been submitted.'
+                    'Tak, du vil modtage et svar hurtigst muligt'
                 )
             })
             .catch((error) => {
@@ -80,12 +82,24 @@ const form = () => {
         <>
             <form onSubmit={handleOnSubmit}>
 
-                <div className="grid grid-cols-2 p-10">
+                <div>
+                    <img src={`${router.query.image}`} alt="" />
+                    <div>Telefonmodel: {router.query.phone}</div>
+                    <div>Hukommelse: {router.query.storage}</div>
 
-                    <div className=" px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                    <div className="">
+                        <div>Dit prisoverslag</div>
+                        <div>3390 kr</div>
+                    </div>
+
+                </div>
+
+                <div className="grid grid-cols-1">
+
+                    <div className=" px-10 pt-6 pb-8 mb-4 flex flex-col my-2">
                         <div className="-mx-3 md:flex mb-2">
 
-                            <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <div className=" px-3 mb-6 md:mb-0">
                                 <label htmlFor="fornavn" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Fornavn</label>
                                 <input
                                     className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
@@ -96,9 +110,8 @@ const form = () => {
                                     required
                                     value={inputs.fornavn}
                                 />
-                            </div>
 
-                            <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+
                                 <label htmlFor="efternavn" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Efternavn</label>
                                 <input
                                     className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
@@ -109,7 +122,79 @@ const form = () => {
                                     required
                                     value={inputs.efternavn}
                                 />
+
                             </div>
+
+                            <div className=" px-3 mb-6 md:mb-0">
+                                <label htmlFor="email" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">email</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="email"
+                                    type="email"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.email}
+                                />
+
+                                <label htmlFor="telefonnummer" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">telefonnummer</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="telefonnummer"
+                                    type="telefonnummer"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.telefonnummer}
+                                />
+
+                            </div>
+
+                            <div className=" px-3 mb-6 md:mb-0">
+                                <label htmlFor="adresse" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">adresse</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="adresse"
+                                    type="adresse"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.adresse}
+                                />
+                                <label htmlFor="postnummer" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">postnummer</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="postnummer"
+                                    type="postnummer"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.postnummer}
+                                />
+                            </div>
+                            <div className=" px-3 mb-6 md:mb-0">
+                                <label htmlFor="by" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">by</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="by"
+                                    type="by"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.by}
+                                />
+                                <label htmlFor="kontonummer" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Kontonummer i IBAN-format</label>
+                                <input
+                                    className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                    id="kontonummer"
+                                    type="kontonummer"
+                                    name="_replyto"
+                                    onChange={handleOnChange}
+                                    required
+                                    value={inputs.kontonummer}
+                                />
+                            </div>
+
 
 
                         </div>
@@ -122,72 +207,15 @@ const form = () => {
                                 : 'Submitting...'}</Button>
                         </div>
 
-                    </div>
-
-                    <div>
-                        <img src={`${router.query.image}`} alt="" />
-                        <div>Telefonmodel: {router.query.phone}</div>
-                        <div>Hukommelse: {router.query.storage}</div>
-
-                        <div className="">
-                            <div>Dit prisoverslag</div>
-                            <div>3390 kr</div>
-                        </div>
 
                     </div>
+
+
 
                 </div>
 
-                {/* <label htmlFor="fornavn">Fornavn</label>
-                <input
-                    id="fornavn"
-                    type="fornavn"
-                    name="_replyto"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.fornavn}
-                />
 
-                <label htmlFor="efternavn">Efternavn</label>
-                <input
-                    id="efternavn"
-                    type="efternavn"
-                    name="_replyto"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.efternavn}
-                />
-
-                <label htmlFor="telefonnummer">Telefonnummer</label>
-                <input
-                    id="telefonnummer"
-                    type="telefonnummer"
-                    name="_replyto"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.telefonnummer}
-                />
-
-                <label htmlFor="email">Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    name="_replyto"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.email}
-                />
-
-                <button type="submit" disabled={status.submitting}>
-                    {!status.submitting
-                        ? !status.submitted
-                            ? 'Submit'
-                            : 'Submitted'
-                        : 'Submitting...'}
-                </button> */}
             </form>
-
-
 
             {status.info.error && (
                 <div className="error">Error: {status.info.msg}</div>
