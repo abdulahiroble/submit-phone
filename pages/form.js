@@ -192,7 +192,6 @@ const form = () => {
                                     onChange={handleOnChange}
                                     required
                                     value={router.query.phone}
-                                // value={inputs.phone}
                                 />
                             </div>
 

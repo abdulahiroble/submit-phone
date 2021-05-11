@@ -43,7 +43,7 @@ const step2 = () => {
             <div>
                 <img src={`${router.query.image}`} alt="" />
                 <div>Telefonmodel: {router.query.phone}</div>
-                <div>Hukommelse: {router.query.storage}</div>
+                <div>Hukommelse: {router.query.storage || router.query.storage2 || router.query.storage3}</div>
             </div>
 
         </div>
