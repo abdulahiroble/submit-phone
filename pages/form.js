@@ -21,7 +21,7 @@ const form = () => {
         adresse: "",
         by: "",
         kontonummer: "",
-        message: "",
+        phone: router.query.phone
     })
     const handleServerResponse = (ok, msg) => {
         if (ok) {
@@ -39,7 +39,7 @@ const form = () => {
                 adresse: "",
                 by: "",
                 kontonummer: "",
-                message: "",
+                phone: router.query.phone
 
             })
         } else {
@@ -183,15 +183,16 @@ const form = () => {
                                     required
                                     value={inputs.by}
                                 />
-                                <label htmlFor="kontonummer" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Kontonummer i IBAN-format</label>
+                                <label htmlFor="phone" className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">phone</label>
                                 <input
                                     className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-                                    id="kontonummer"
-                                    type="kontonummer"
+                                    id="phone"
+                                    type="text"
                                     name="_replyto"
                                     onChange={handleOnChange}
                                     required
-                                    value={inputs.kontonummer}
+                                    value={router.query.phone}
+                                // value={inputs.phone}
                                 />
                             </div>
 
